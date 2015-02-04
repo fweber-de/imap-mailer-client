@@ -57,6 +57,12 @@ class Account
     private $creationDate;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Mailer\UserBundle\Entity\User", inversedBy="accounts")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $user;
+
+    /**
      * Get id
      *
      * @return integer
@@ -179,5 +185,28 @@ class Account
     public function getCreationDate()
     {
         return $this->creationDate;
+    }
+
+    /**
+     * Set user
+     *
+     * @param  \Mailer\UserBundle\Entity\User $user
+     * @return Account
+     */
+    public function setUser(\Mailer\UserBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Mailer\UserBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }
