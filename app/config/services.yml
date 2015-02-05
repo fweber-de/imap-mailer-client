@@ -1,7 +1,18 @@
+parameters:
+    mailer.imap_debug_folder: /tmp/imap_debug
+
 services:
-    register_user_command_handler:
+    mailer.password_handler:
+        class: Mailer\MailBundle\Service\PasswordHandlerService
+    mailer.imap:
+        class: Mailer\MailBundle\Service\ImapService
+        arguments:
+            - %mailer.imap_debug_folder%
+            - @mailer.password_handler
+    add_account_command_handler:
         class: Mailer\MailBundle\CommandHelper\AddAccountCommandHelper
         arguments:
             - @doctrine
+            - @validator
         tags:
             - { name: command_handler, handles: Mailer\MailBundle\Command\AddAccountCommand }

@@ -63,6 +63,20 @@ class Account
     private $user;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="port", type="integer")
+     */
+    private $port;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="secure", type="string", length=255)
+     */
+    private $secure;
+
+    /**
      * Get id
      *
      * @return integer
@@ -75,7 +89,7 @@ class Account
     /**
      * Set title
      *
-     * @param  string  $title
+     * @param string $title
      * @return Account
      */
     public function setTitle($title)
@@ -98,7 +112,7 @@ class Account
     /**
      * Set server
      *
-     * @param  string  $server
+     * @param string $server
      * @return Account
      */
     public function setServer($server)
@@ -121,7 +135,7 @@ class Account
     /**
      * Set username
      *
-     * @param  string  $username
+     * @param string $username
      * @return Account
      */
     public function setUsername($username)
@@ -144,7 +158,7 @@ class Account
     /**
      * Set password
      *
-     * @param  string  $password
+     * @param string $password
      * @return Account
      */
     public function setPassword($password)
@@ -167,7 +181,7 @@ class Account
     /**
      * Set creationDate
      *
-     * @param  \DateTime $creationDate
+     * @param \DateTime $creationDate
      * @return Account
      */
     public function setCreationDate($creationDate)
@@ -188,9 +202,55 @@ class Account
     }
 
     /**
+     * Set port
+     *
+     * @param integer $port
+     * @return Account
+     */
+    public function setPort($port)
+    {
+        $this->port = $port;
+
+        return $this;
+    }
+
+    /**
+     * Get port
+     *
+     * @return integer
+     */
+    public function getPort()
+    {
+        return $this->port;
+    }
+
+    /**
+     * Set secure
+     *
+     * @param string $secure
+     * @return Account
+     */
+    public function setSecure($secure)
+    {
+        $this->secure = $secure;
+
+        return $this;
+    }
+
+    /**
+     * Get secure
+     *
+     * @return string
+     */
+    public function getSecure()
+    {
+        return $this->secure;
+    }
+
+    /**
      * Set user
      *
-     * @param  \Mailer\UserBundle\Entity\User $user
+     * @param \Mailer\UserBundle\Entity\User $user
      * @return Account
      */
     public function setUser(\Mailer\UserBundle\Entity\User $user = null)
