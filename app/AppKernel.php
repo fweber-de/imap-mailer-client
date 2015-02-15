@@ -20,7 +20,8 @@ class AppKernel extends Kernel
             new Mailer\DataBundle\MailerDataBundle(),
             new Mailer\UserBundle\MailerUserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-            new SimpleBus\SymfonyBridge\SimpleBusCommandBusBundle()
+            new SimpleBus\SymfonyBridge\SimpleBusCommandBusBundle(),
+            new Mailer\AppBundle\MailerAppBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

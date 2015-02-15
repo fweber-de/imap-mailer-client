@@ -23,7 +23,7 @@ class ImapService
     }
 
     /**
-     * @param Account $account
+     * @param  Account                     $account
      * @return Horde_Imap_Client_Socket
      * @throws Horde_Imap_Client_Exception
      */
@@ -36,7 +36,7 @@ class ImapService
                 'hostspec' => $account->getServer(),
                 'port' => $account->getPort(),
                 'secure' => $account->getSecure(),
-                'debug' => $this->imapDebugFolder
+                'debug' => $this->imapDebugFolder,
             )
         );
 

@@ -7,7 +7,7 @@ use SimpleBus\Message\Handler\MessageHandler;
 use SimpleBus\Message\Message;
 use Symfony\Component\Validator\Exception\InvalidArgumentException;
 
-class AddAccountCommandHelper implements MessageHandler
+class AddAccountCommandHandler implements MessageHandler
 {
     /**
      * @var Registry
@@ -28,7 +28,7 @@ class AddAccountCommandHelper implements MessageHandler
         $errors = $this->validator->validate($account);
 
         if (count($errors) > 0) {
-            throw new InvalidArgumentException((string)$errors);
+            throw new InvalidArgumentException((string) $errors);
         }
 
         $em = $this->doctrine->getManager();

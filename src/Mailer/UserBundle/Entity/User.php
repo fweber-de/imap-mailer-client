@@ -72,7 +72,7 @@ class User extends BaseUser
     /**
      * Add accounts
      *
-     * @param \Mailer\DataBundle\Entity\Account $accounts
+     * @param  \Mailer\DataBundle\Entity\Account $accounts
      * @return User
      */
     public function addAccount(\Mailer\DataBundle\Entity\Account $accounts)

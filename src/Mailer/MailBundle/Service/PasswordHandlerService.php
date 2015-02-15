@@ -5,7 +5,7 @@ namespace Mailer\MailBundle\Service;
 class PasswordHandlerService
 {
     /**
-     * @param string $password
+     * @param  string $password
      * @return string
      */
     public function encrypt($password)
@@ -16,7 +16,7 @@ class PasswordHandlerService
     }
 
     /**
-     * @param string $password
+     * @param  string $password
      * @return string
      */
     public function decrypt($password)

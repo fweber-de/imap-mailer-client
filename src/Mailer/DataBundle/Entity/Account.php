@@ -89,7 +89,7 @@ class Account
     /**
      * Set title
      *
-     * @param string $title
+     * @param  string  $title
      * @return Account
      */
     public function setTitle($title)
@@ -112,7 +112,7 @@ class Account
     /**
      * Set server
      *
-     * @param string $server
+     * @param  string  $server
      * @return Account
      */
     public function setServer($server)
@@ -135,7 +135,7 @@ class Account
     /**
      * Set username
      *
-     * @param string $username
+     * @param  string  $username
      * @return Account
      */
     public function setUsername($username)
@@ -158,7 +158,7 @@ class Account
     /**
      * Set password
      *
-     * @param string $password
+     * @param  string  $password
      * @return Account
      */
     public function setPassword($password)
@@ -181,7 +181,7 @@ class Account
     /**
      * Set creationDate
      *
-     * @param \DateTime $creationDate
+     * @param  \DateTime $creationDate
      * @return Account
      */
     public function setCreationDate($creationDate)
@@ -204,7 +204,7 @@ class Account
     /**
      * Set port
      *
-     * @param integer $port
+     * @param  integer $port
      * @return Account
      */
     public function setPort($port)
@@ -227,7 +227,7 @@ class Account
     /**
      * Set secure
      *
-     * @param string $secure
+     * @param  string  $secure
      * @return Account
      */
     public function setSecure($secure)
@@ -250,7 +250,7 @@ class Account
     /**
      * Set user
      *
-     * @param \Mailer\UserBundle\Entity\User $user
+     * @param  \Mailer\UserBundle\Entity\User $user
      * @return Account
      */
     public function setUser(\Mailer\UserBundle\Entity\User $user = null)

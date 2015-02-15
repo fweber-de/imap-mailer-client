@@ -1,0 +1,10 @@
+index:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: unified_inbox
+        permanent: true
+
+unified_inbox:
+    path: /inbox
+    defaults: { _controller: MailerAppBundle:Inbox:unifiedInbox }
