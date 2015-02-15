@@ -7,4 +7,8 @@ index:
 
 unified_inbox:
     path: /inbox
-    defaults: { _controller: MailerAppBundle:Inbox:unifiedInbox }
+    defaults: { _controller: MailerAppBundle:App:unifiedInbox }
+
+settings:
+    path: /settings
+    defaults: { _controller: MailerAppBundle:App:settings }

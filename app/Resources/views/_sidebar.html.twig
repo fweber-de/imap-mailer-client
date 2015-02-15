@@ -1,0 +1,47 @@
+<ul class="nav nav-sidebar">
+
+    <li>
+        <a href="{{ path('unified_inbox') }}">
+            <i class="fa fa-inbox"></i> Inbox
+        </a>
+    </li>
+
+</ul>
+
+<hr>
+
+{# accounts list #}
+{% if accounts is defined %}
+    <ul class="nav nav-sidebar">
+
+        {% if accounts|length() == 0 %}
+            <script>
+                $('.js-alert-box').html(bsAlert('Attention!', '', 'info', false));
+            </script>
+        {% endif %}
+
+        {% for account in accounts %}
+            <li>
+                <a href="#">
+                    {{ account.title }}
+                </a>
+            </li>
+        {% endfor %}
+
+    </ul>
+{% endif %}
+
+{# folders list #}
+{% if account is defined %}
+    <ul class="nav nav-sidebar">
+
+        {% for folder in account.folders %}
+            <li>
+                <a href="#">
+                    {{ folder.title }}
+                </a>
+            </li>
+        {% endfor %}
+
+    </ul>
+{% endif %}
