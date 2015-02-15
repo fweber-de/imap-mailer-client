@@ -1,2 +1,6 @@
+mailer_app:
+    resource: "@MailerAppBundle/Resources/config/routing.yml"
+    prefix:   /
+
 _user_bundle:
-    resource: "@itawUserBundle/Resources/config/routing.yml"
+    resource: "@MailerUserBundle/Resources/config/routing.yml"

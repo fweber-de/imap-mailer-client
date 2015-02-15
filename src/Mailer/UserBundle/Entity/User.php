@@ -68,4 +68,27 @@ class User extends BaseUser
 
         return $this;
     }
+
+    /**
+     * Add accounts
+     *
+     * @param  \Mailer\DataBundle\Entity\Account $accounts
+     * @return User
+     */
+    public function addAccount(\Mailer\DataBundle\Entity\Account $accounts)
+    {
+        $this->accounts[] = $accounts;
+
+        return $this;
+    }
+
+    /**
+     * Remove accounts
+     *
+     * @param \Mailer\DataBundle\Entity\Account $accounts
+     */
+    public function removeAccount(\Mailer\DataBundle\Entity\Account $accounts)
+    {
+        $this->accounts->removeElement($accounts);
+    }
 }

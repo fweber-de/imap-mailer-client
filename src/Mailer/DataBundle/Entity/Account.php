@@ -63,6 +63,20 @@ class Account
     private $user;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="port", type="integer")
+     */
+    private $port;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="secure", type="string", length=255)
+     */
+    private $secure;
+
+    /**
      * Get id
      *
      * @return integer
@@ -185,6 +199,52 @@ class Account
     public function getCreationDate()
     {
         return $this->creationDate;
+    }
+
+    /**
+     * Set port
+     *
+     * @param  integer $port
+     * @return Account
+     */
+    public function setPort($port)
+    {
+        $this->port = $port;
+
+        return $this;
+    }
+
+    /**
+     * Get port
+     *
+     * @return integer
+     */
+    public function getPort()
+    {
+        return $this->port;
+    }
+
+    /**
+     * Set secure
+     *
+     * @param  string  $secure
+     * @return Account
+     */
+    public function setSecure($secure)
+    {
+        $this->secure = $secure;
+
+        return $this;
+    }
+
+    /**
+     * Get secure
+     *
+     * @return string
+     */
+    public function getSecure()
+    {
+        return $this->secure;
     }
 
     /**

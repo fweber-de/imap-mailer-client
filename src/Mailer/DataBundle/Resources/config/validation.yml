@@ -1,0 +1,12 @@
+Mailer\DataBundle\Entity\Account:
+    properties:
+        title:
+            - NotBlank: ~
+        server:
+            - NotBlank: ~
+        username:
+            - NotBlank: ~
+        password:
+            - NotBlank: ~
+        creationDate:
+            - DateTime: ~
