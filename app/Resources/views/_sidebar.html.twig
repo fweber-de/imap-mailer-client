@@ -6,19 +6,8 @@
         </a>
     </li>
 
-</ul>
-
-<hr>
-
-{# accounts list #}
-{% if accounts is defined %}
-    <ul class="nav nav-sidebar">
-
-        {% if accounts|length() == 0 %}
-            <script>
-                $('.js-alert-box').html(bsAlert('Attention!', '', 'info', false));
-            </script>
-        {% endif %}
+    {# accounts list #}
+    {% if accounts is defined %}
 
         {% for account in accounts %}
             <li>
@@ -28,12 +17,10 @@
             </li>
         {% endfor %}
 
-    </ul>
-{% endif %}
+    {% endif %}
 
-{# folders list #}
-{% if account is defined %}
-    <ul class="nav nav-sidebar">
+    {# folders list #}
+    {% if account is defined %}
 
         {% for folder in account.folders %}
             <li>
@@ -43,5 +30,6 @@
             </li>
         {% endfor %}
 
-    </ul>
-{% endif %}
+    {% endif %}
+
+</ul>

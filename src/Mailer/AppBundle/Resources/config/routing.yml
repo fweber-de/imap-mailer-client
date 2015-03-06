@@ -12,3 +12,7 @@ unified_inbox:
 settings:
     path: /settings
     defaults: { _controller: MailerAppBundle:App:settings }
+
+accounts:
+    resource: @MailerAppBundle/Resources/config/Account/routing.yml
+    prefix: /account

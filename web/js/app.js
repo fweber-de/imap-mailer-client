@@ -1,4 +1,4 @@
-var bsAlert = function (title, text, type, dismissable) {
+function bsAlert(title, text, type, dismissable) {
 
     var alert = '<div class="alert alert-' + type;
 

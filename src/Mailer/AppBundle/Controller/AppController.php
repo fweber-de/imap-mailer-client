@@ -8,12 +8,23 @@ class AppController extends Controller
 {
     public function unifiedInboxAction()
     {
-        return $this->render("App/unified.html.twig");
+        $user = $this->getUser();
+
+        $accounts = $this->getDoctrine()->getRepository('MailerDataBundle:Account')->findByUser($user);
+        $mails = null;
+
+        return $this->render(
+            'App/unified.html.twig',
+            array(
+                'mails' => $mails,
+                'accounts' => $accounts
+            )
+        );
     }
 
     public function settingsAction()
     {
-        return $this->render("App/settings.html.twig");
+        return $this->render('App/settings.html.twig');
     }
 
     public function sidebarAction($accountId = null)
