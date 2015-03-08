@@ -3,6 +3,7 @@
 namespace Mailer\AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 class AppController extends Controller
 {
@@ -12,6 +13,14 @@ class AppController extends Controller
 
         $accounts = $this->getDoctrine()->getRepository('MailerDataBundle:Account')->findByUser($user);
         $mails = null;
+
+        foreach ($accounts as $account) {
+            $_mails = $this->get('mailer.imap')->fetch($this->get('mailer.imap')->connect($account), 'INBOX');
+
+            foreach ($_mails as $m) {
+                $mails[] = $m;
+            }
+        }
 
         return $this->render(
             'App/unified.html.twig',

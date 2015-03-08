@@ -30,7 +30,8 @@
     "incenteev/composer-parameter-handler": "~2.0",
     "pear-pear.horde.org/Horde_Imap_Client": "*",
     "friendsofsymfony/user-bundle": "~1.3",
-    "simple-bus/symfony-bridge": "~3.0"
+    "simple-bus/symfony-bridge": "~3.0",
+    "coreproc/crypto-guard": "0.1.*"
   },
   "require-dev": {
     "sensio/generator-bundle": "~2.3"

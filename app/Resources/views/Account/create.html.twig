@@ -13,8 +13,8 @@
             <form method="post" id="form-add-account">
 
                 <div class="form-group">
-                    <label for="input-title">Title</label>
-                    <input type="text" class="form-control" id="input-title" name="title">
+                    <label for="input-email">Email</label>
+                    <input type="email" class="form-control" id="input-email" name="email">
                 </div>
 
                 <div class="form-group">
@@ -41,13 +41,18 @@
                 <div class="form-group">
                     <div class="btn-group" data-toggle="buttons">
                         <label class="btn btn-primary active">
-                            <input type="radio" name="secure" id="option1" autocomplete="off" checked> Secure
+                            <input type="radio" name="security" value="ssl" id="option1" autocomplete="off" checked> SSL
                         </label>
                         <label class="btn btn-primary">
-                            <input type="radio" id="option2" autocomplete="off"> Unsecure
+                            <input type="radio" name="security" value="tls" id="option2" autocomplete="off"> TLS
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="security" value="none" id="option2" autocomplete="off"> None
                         </label>
                     </div>
                 </div>
+
+                <input type="hidden" value="1" name="sent">
 
                 <button type="submit" class="btn btn-success">Submit</button>
 

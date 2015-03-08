@@ -22,10 +22,12 @@
 
     {% if mails|length() > 0 %}
 
+        {{ dump(mails) }}
+
         <ul class="mail-list">
 
             {% for mail in mails %}
-                <li>
+                <li data-id="{{ mail.id }}" data-uid="{{ mail.uid }}">
                     {% set mailDate = mail.receiveDate|date('Y.m.d h:i') %}
 
                     {% if 'now'|date('Y.m.d') == mail.receiveDate|date('Y.m.d') %}

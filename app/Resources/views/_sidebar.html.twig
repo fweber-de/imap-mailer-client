@@ -11,8 +11,8 @@
 
         {% for account in accounts %}
             <li>
-                <a href="#">
-                    {{ account.title }}
+                <a href="#" title="{{ account.email }}">
+                    <i class="fa fa-envelope-o"></i> <span class="hidden-xs hidden-sm">{{ account.email }}</span>
                 </a>
             </li>
         {% endfor %}

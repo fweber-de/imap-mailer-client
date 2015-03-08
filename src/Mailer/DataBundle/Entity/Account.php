@@ -24,9 +24,9 @@ class Account
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=255)
+     * @ORM\Column(name="title", type="string", length=255, unique=true)
      */
-    private $title;
+    private $email;
 
     /**
      * @var string
@@ -72,9 +72,9 @@ class Account
     /**
      * @var string
      *
-     * @ORM\Column(name="secure", type="string", length=255)
+     * @ORM\Column(name="security", type="string", length=255)
      */
-    private $secure;
+    private $security;
 
     /**
      * Get id
@@ -87,26 +87,26 @@ class Account
     }
 
     /**
-     * Set title
+     * Set email
      *
-     * @param  string  $title
+     * @param  string  $email
      * @return Account
      */
-    public function setTitle($title)
+    public function setEmail($email)
     {
-        $this->title = $title;
+        $this->email = $email;
 
         return $this;
     }
 
     /**
-     * Get title
+     * Get email
      *
      * @return string
      */
-    public function getTitle()
+    public function getEmail()
     {
-        return $this->title;
+        return $this->email;
     }
 
     /**
@@ -225,26 +225,26 @@ class Account
     }
 
     /**
-     * Set secure
+     * Set security
      *
-     * @param  string  $secure
+     * @param  string  $security
      * @return Account
      */
-    public function setSecure($secure)
+    public function setSecurity($security)
     {
-        $this->secure = $secure;
+        $this->security = $security;
 
         return $this;
     }
 
     /**
-     * Get secure
+     * Get security
      *
      * @return string
      */
-    public function getSecure()
+    public function getSecurity()
     {
-        return $this->secure;
+        return $this->security;
     }
 
     /**
