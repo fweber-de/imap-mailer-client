@@ -1,0 +1,3 @@
+accounts_create:
+    path: /create
+    defaults: { _controller: MailerAppBundle:Account:create }

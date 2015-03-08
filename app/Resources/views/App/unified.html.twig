@@ -1,0 +1,55 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}{{ parent() }} &middot; Unified Inbox{% endblock %}
+
+{% block content %}
+
+    {% if accounts|length() == 0 %}
+        <script>
+            swal({
+                title: 'Attention!',
+                text: 'No Account is currently defined!',
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#5cb85c",
+                confirmButtonText: "Add One!",
+                closeOnConfirm: false
+            }, function () {
+                window.location.href = '{{ path('accounts_create') }}'
+            });
+        </script>
+    {% endif %}
+
+    {% if mails|length() > 0 %}
+
+        {{ dump(mails) }}
+
+        <ul class="mail-list">
+
+            {% for mail in mails %}
+                <li data-id="{{ mail.id }}" data-uid="{{ mail.uid }}">
+                    {% set mailDate = mail.receiveDate|date('Y.m.d h:i') %}
+
+                    {% if 'now'|date('Y.m.d') == mail.receiveDate|date('Y.m.d') %}
+                        {% set mailDate = mail.receiveDate|date('h:i') %}
+                    {% endif %}
+
+                    <span class="pull-right date">{{ mailDate }}</span>
+                    <span class="sender">{{ mail.sender }}</span>
+                    <span class="subject">{{ mail.subject }}</span>
+
+                    <p class="content-excerpt">{{ mail.text }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+
+    {% else %}
+
+        <div class="text-center notice">
+            <i class="fa fa-inbox"></i>
+            Your Inbox is empty!
+        </div>
+
+    {% endif %}
+
+{% endblock %}

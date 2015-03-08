@@ -1,0 +1,35 @@
+<ul class="nav nav-sidebar">
+
+    <li>
+        <a href="{{ path('unified_inbox') }}">
+            <i class="fa fa-inbox"></i> Inbox
+        </a>
+    </li>
+
+    {# accounts list #}
+    {% if accounts is defined %}
+
+        {% for account in accounts %}
+            <li>
+                <a href="#" title="{{ account.email }}">
+                    <i class="fa fa-envelope-o"></i> <span class="hidden-xs hidden-sm">{{ account.email }}</span>
+                </a>
+            </li>
+        {% endfor %}
+
+    {% endif %}
+
+    {# folders list #}
+    {% if account is defined %}
+
+        {% for folder in account.folders %}
+            <li>
+                <a href="#">
+                    {{ folder.title }}
+                </a>
+            </li>
+        {% endfor %}
+
+    {% endif %}
+
+</ul>

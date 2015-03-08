@@ -2,17 +2,27 @@
 
 namespace Mailer\MailBundle\Service;
 
+use Coreproc\CryptoGuard\CryptoGuard;
+
 class PasswordHandlerService
 {
+    /**
+     * @var CryptoGuard
+     */
+    private $cryptoGuard;
+
+    public function __construct($secret)
+    {
+        $this->cryptoGuard = new CryptoGuard($secret);
+    }
+
     /**
      * @param  string $password
      * @return string
      */
     public function encrypt($password)
     {
-        //TODO: encrypt password
-
-        return $password;
+        return $this->cryptoGuard->encrypt($password);
     }
 
     /**
@@ -21,8 +31,6 @@ class PasswordHandlerService
      */
     public function decrypt($password)
     {
-        //TODO: decrypt password
-
-        return $password;
+        return $this->cryptoGuard->decrypt($password);
     }
 }
