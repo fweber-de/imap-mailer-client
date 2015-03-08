@@ -10,7 +10,7 @@ $(document).ready(function () {
         $(this).children('i').addClass('fa-spin');
 
         $.get(url, function (data) {
-            /*window.location.reload();*/
+            window.location.reload();
         });
 
     });

@@ -1,8 +1,7 @@
-mails_show:
-    pattern: /{mailId}
-    defaults: { _controller: MailerAppBundle:Mail:show }
-
-#json
 mails_fetch_all:
     pattern: /fetchAll/{inbox}
     defaults: { _controller: MailerAppBundle:Mail:fetchAllAccounts, inbox: INBOX }
+
+mails_show:
+    pattern: /{mailId}
+    defaults: { _controller: MailerAppBundle:Mail:show }
