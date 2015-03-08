@@ -5,7 +5,7 @@ namespace Mailer\DataBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Mail
+ * Mail.
  *
  * @ORM\Table("mail")
  * @ORM\Entity
@@ -70,7 +70,7 @@ class Mail
     private $inbox;
 
     /**
-     * Get id
+     * Get id.
      *
      * @return integer
      */
@@ -80,9 +80,10 @@ class Mail
     }
 
     /**
-     * Set uid
+     * Set uid.
      *
      * @param integer $uid
+     *
      * @return Mail
      */
     public function setUid($uid)
@@ -93,7 +94,7 @@ class Mail
     }
 
     /**
-     * Get uid
+     * Get uid.
      *
      * @return integer
      */
@@ -103,9 +104,10 @@ class Mail
     }
 
     /**
-     * Set subject
+     * Set subject.
      *
      * @param string $subject
+     *
      * @return Mail
      */
     public function setSubject($subject)
@@ -116,7 +118,7 @@ class Mail
     }
 
     /**
-     * Get subject
+     * Get subject.
      *
      * @return string
      */
@@ -126,9 +128,10 @@ class Mail
     }
 
     /**
-     * Set sender
+     * Set sender.
      *
      * @param string $sender
+     *
      * @return Mail
      */
     public function setSender($sender)
@@ -139,7 +142,7 @@ class Mail
     }
 
     /**
-     * Get sender
+     * Get sender.
      *
      * @return string
      */
@@ -149,9 +152,10 @@ class Mail
     }
 
     /**
-     * Set text
+     * Set text.
      *
      * @param string $text
+     *
      * @return Mail
      */
     public function setText($text)
@@ -162,7 +166,7 @@ class Mail
     }
 
     /**
-     * Get text
+     * Get text.
      *
      * @return string
      */
@@ -172,9 +176,10 @@ class Mail
     }
 
     /**
-     * Set receiveDate
+     * Set receiveDate.
      *
      * @param \DateTime $receiveDate
+     *
      * @return Mail
      */
     public function setReceiveDate($receiveDate)
@@ -185,7 +190,7 @@ class Mail
     }
 
     /**
-     * Get receiveDate
+     * Get receiveDate.
      *
      * @return \DateTime
      */
@@ -195,9 +200,10 @@ class Mail
     }
 
     /**
-     * Set account
+     * Set account.
      *
      * @param \Mailer\DataBundle\Entity\Account $account
+     *
      * @return Mail
      */
     public function setAccount(\Mailer\DataBundle\Entity\Account $account = null)
@@ -208,9 +214,9 @@ class Mail
     }
 
     /**
-     * Get account
+     * Get account.
      *
-     * @return \Mailer\DataBundle\Entity\Account 
+     * @return \Mailer\DataBundle\Entity\Account
      */
     public function getAccount()
     {
@@ -218,9 +224,10 @@ class Mail
     }
 
     /**
-     * Set inbox
+     * Set inbox.
      *
      * @param string $inbox
+     *
      * @return Mail
      */
     public function setInbox($inbox)
@@ -231,9 +238,9 @@ class Mail
     }
 
     /**
-     * Get inbox
+     * Get inbox.
      *
-     * @return string 
+     * @return string
      */
     public function getInbox()
     {

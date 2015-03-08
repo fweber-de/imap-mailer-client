@@ -47,6 +47,7 @@ body {
 
 .mail-list > li:hover {
     background-color: rgba(51, 122, 183, 0.1);
+    cursor: pointer;
 }
 
 /*.mail-list > li:nth-child(even) {
@@ -67,6 +68,23 @@ body {
 .mail-list > li > .content-excerpt {
     color: #AAAAAA;
     display: block;
+}
+
+/*
+ * MAIL DETAIL
+ */
+.mail-head {
+    padding-left: 19px;
+}
+
+.mail-head > table td, .mail-head > table th {
+    padding-right: 19px;
+}
+
+.mail-body {
+    padding-left: 19px;
+    padding-right: 19px;
+    padding-bottom: 19px;
 }
 
 /* FONTS */

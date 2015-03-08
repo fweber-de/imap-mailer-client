@@ -8,7 +8,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class MailController extends Controller
 {
-
     public function showAction(Request $request, $mailId)
     {
         $mail = $this->getDoctrine()->getRepository('MailerDataBundle:Mail')->findOneById($mailId);
@@ -16,7 +15,7 @@ class MailController extends Controller
         return $this->render(
             'Mail/show.html.twig',
             array(
-                'mail' => $mail
+                'mail' => $mail,
             )
         );
     }

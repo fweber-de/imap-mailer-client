@@ -17,7 +17,7 @@ class AppExtension extends \Twig_Extension
             return $str;
         }
 
-        return substr($str, 0, $length - 3) . '...';
+        return substr($str, 0, $length - 3).'...';
     }
 
     public function getName()

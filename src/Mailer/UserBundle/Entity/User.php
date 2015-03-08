@@ -41,6 +41,7 @@ class User extends BaseUser
 
     /**
      * @param $accounts
+     *
      * @return $this
      */
     public function setAccounts($accounts)
@@ -60,6 +61,7 @@ class User extends BaseUser
 
     /**
      * @param $id
+     *
      * @return $this
      */
     public function setId($id)
@@ -70,9 +72,10 @@ class User extends BaseUser
     }
 
     /**
-     * Add accounts
+     * Add accounts.
      *
-     * @param  \Mailer\DataBundle\Entity\Account $accounts
+     * @param \Mailer\DataBundle\Entity\Account $accounts
+     *
      * @return User
      */
     public function addAccount(\Mailer\DataBundle\Entity\Account $accounts)
@@ -83,7 +86,7 @@ class User extends BaseUser
     }
 
     /**
-     * Remove accounts
+     * Remove accounts.
      *
      * @param \Mailer\DataBundle\Entity\Account $accounts
      */

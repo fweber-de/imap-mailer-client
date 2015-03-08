@@ -5,6 +5,9 @@
 {% block content %}
 
     <div class="mail-head">
+
+        <h2>{{ mail.subject }}</h2>
+
         <table>
             <tr>
                 <th>From</th>
@@ -14,7 +17,23 @@
                 <th>To</th>
                 <td>{{ mail.account.email }}</td>
             </tr>
+            <tr>
+                <th>Received</th>
+
+                {% set mailDate = mail.receiveDate|date('d.m.Y h:i') %}
+                {% if 'now'|date('Y.m.d') == mail.receiveDate|date('Y.m.d') %}
+                    {% set mailDate = mail.receiveDate|date('h:i') %}
+                {% endif %}
+
+                <td>{{ mailDate }}</td>
+            </tr>
         </table>
+    </div>
+
+    <hr>
+
+    <div class="mail-body">
+        {{ mail.text|nl2br }}
     </div>
 
 {% endblock %}

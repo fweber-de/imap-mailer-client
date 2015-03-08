@@ -6,7 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Account
+ * Account.
  *
  * @ORM\Table("account")
  * @ORM\Entity
@@ -88,7 +88,7 @@ class Account
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return integer
      */
@@ -98,9 +98,10 @@ class Account
     }
 
     /**
-     * Set email
+     * Set email.
      *
-     * @param  string $email
+     * @param string $email
+     *
      * @return Account
      */
     public function setEmail($email)
@@ -111,7 +112,7 @@ class Account
     }
 
     /**
-     * Get email
+     * Get email.
      *
      * @return string
      */
@@ -121,9 +122,10 @@ class Account
     }
 
     /**
-     * Set server
+     * Set server.
      *
-     * @param  string $server
+     * @param string $server
+     *
      * @return Account
      */
     public function setServer($server)
@@ -134,7 +136,7 @@ class Account
     }
 
     /**
-     * Get server
+     * Get server.
      *
      * @return string
      */
@@ -144,9 +146,10 @@ class Account
     }
 
     /**
-     * Set username
+     * Set username.
      *
-     * @param  string $username
+     * @param string $username
+     *
      * @return Account
      */
     public function setUsername($username)
@@ -157,7 +160,7 @@ class Account
     }
 
     /**
-     * Get username
+     * Get username.
      *
      * @return string
      */
@@ -167,9 +170,10 @@ class Account
     }
 
     /**
-     * Set password
+     * Set password.
      *
-     * @param  string $password
+     * @param string $password
+     *
      * @return Account
      */
     public function setPassword($password)
@@ -180,7 +184,7 @@ class Account
     }
 
     /**
-     * Get password
+     * Get password.
      *
      * @return string
      */
@@ -190,9 +194,10 @@ class Account
     }
 
     /**
-     * Set creationDate
+     * Set creationDate.
      *
-     * @param  \DateTime $creationDate
+     * @param \DateTime $creationDate
+     *
      * @return Account
      */
     public function setCreationDate($creationDate)
@@ -203,7 +208,7 @@ class Account
     }
 
     /**
-     * Get creationDate
+     * Get creationDate.
      *
      * @return \DateTime
      */
@@ -213,9 +218,10 @@ class Account
     }
 
     /**
-     * Set port
+     * Set port.
      *
-     * @param  integer $port
+     * @param integer $port
+     *
      * @return Account
      */
     public function setPort($port)
@@ -226,7 +232,7 @@ class Account
     }
 
     /**
-     * Get port
+     * Get port.
      *
      * @return integer
      */
@@ -236,9 +242,10 @@ class Account
     }
 
     /**
-     * Set security
+     * Set security.
      *
-     * @param  string $security
+     * @param string $security
+     *
      * @return Account
      */
     public function setSecurity($security)
@@ -249,7 +256,7 @@ class Account
     }
 
     /**
-     * Get security
+     * Get security.
      *
      * @return string
      */
@@ -259,9 +266,10 @@ class Account
     }
 
     /**
-     * Set user
+     * Set user.
      *
-     * @param  \Mailer\UserBundle\Entity\User $user
+     * @param \Mailer\UserBundle\Entity\User $user
+     *
      * @return Account
      */
     public function setUser(\Mailer\UserBundle\Entity\User $user = null)
@@ -272,7 +280,7 @@ class Account
     }
 
     /**
-     * Get user
+     * Get user.
      *
      * @return \Mailer\UserBundle\Entity\User
      */
@@ -282,9 +290,10 @@ class Account
     }
 
     /**
-     * Add mails
+     * Add mails.
      *
      * @param \Mailer\DataBundle\Entity\Mail $mails
+     *
      * @return Account
      */
     public function addMail(\Mailer\DataBundle\Entity\Mail $mails)
@@ -295,7 +304,7 @@ class Account
     }
 
     /**
-     * Remove mails
+     * Remove mails.
      *
      * @param \Mailer\DataBundle\Entity\Mail $mails
      */
@@ -305,9 +314,9 @@ class Account
     }
 
     /**
-     * Get mails
+     * Get mails.
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getMails()
     {

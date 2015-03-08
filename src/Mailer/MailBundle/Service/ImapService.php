@@ -20,7 +20,8 @@ class ImapService
 
     /**
      * @param Account $account
-     * @param string $inbox
+     * @param string  $inbox
+     *
      * @return resource
      */
     private function connect($account, $inbox)
@@ -44,8 +45,9 @@ class ImapService
 
     /**
      * @param Account $account
-     * @param string $inbox
-     * @param string $query
+     * @param string  $inbox
+     * @param string  $query
+     *
      * @return ArrayCollection
      */
     public function fetch($account, $inbox, $query = 'ALL')

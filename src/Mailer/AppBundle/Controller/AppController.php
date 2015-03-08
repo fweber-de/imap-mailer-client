@@ -3,7 +3,6 @@
 namespace Mailer\AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
 
 class AppController extends Controller
 {
@@ -21,7 +20,7 @@ class AppController extends Controller
             'App/unified.html.twig',
             array(
                 'mails' => $mails,
-                'accounts' => $accounts
+                'accounts' => $accounts,
             )
         );
     }
@@ -41,7 +40,7 @@ class AppController extends Controller
             return $this->render(
                 '_sidebar.html.twig',
                 array(
-                    'accounts' => $accounts
+                    'accounts' => $accounts,
                 )
             );
         }
@@ -55,7 +54,7 @@ class AppController extends Controller
         return $this->render(
             '_sidebar.html.twig',
             array(
-                'account' => $account
+                'account' => $account,
             )
         );
     }

@@ -26,8 +26,8 @@
 
             {% for mail in mails %}
                 <li data-id="{{ mail.id }}" data-uid="{{ mail.uid }}">
-                    {% set mailDate = mail.receiveDate|date('d.m.Y h:i') %}
 
+                    {% set mailDate = mail.receiveDate|date('d.m.Y h:i') %}
                     {% if 'now'|date('Y.m.d') == mail.receiveDate|date('Y.m.d') %}
                         {% set mailDate = mail.receiveDate|date('h:i') %}
                     {% endif %}
