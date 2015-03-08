@@ -16,3 +16,7 @@ settings:
 accounts:
     resource: @MailerAppBundle/Resources/config/Account/routing.yml
     prefix: /account
+
+mails:
+    resource: @MailerAppBundle/Resources/config/Mail/routing.yml
+    prefix: /mail

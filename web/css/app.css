@@ -19,6 +19,19 @@ body {
     margin: 19px;
 }
 
+.sub-navbar {
+    padding-left: 19px;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 11px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.sub-navbar a {
+    margin-right: 10px;
+}
+
 /* MAIL */
 .mail-list {
     margin-left: -40px;
@@ -32,9 +45,13 @@ body {
     padding-right: 19px;
 }
 
-.mail-list > li:nth-child(even) {
-    background-color: #EEEEEE;
+.mail-list > li:hover {
+    background-color: rgba(51, 122, 183, 0.1);
 }
+
+/*.mail-list > li:nth-child(even) {
+    background-color: rgba(51, 122, 183, 0.05);
+}*/
 
 .mail-list > li > .sender, .mail-list > li > .date {
     font-weight: 700;
