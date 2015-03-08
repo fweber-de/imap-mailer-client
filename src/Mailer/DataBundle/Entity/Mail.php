@@ -57,6 +57,19 @@ class Mail
     private $receiveDate;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Account", inversedBy="mails")
+     * @ORM\JoinColumn(name="account_id", referencedColumnName="id")
+     */
+    private $account;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="inbox", type="text")
+     */
+    private $inbox;
+
+    /**
      * Get id
      *
      * @return integer
@@ -128,7 +141,7 @@ class Mail
     /**
      * Get sender
      *
-     * @return string 
+     * @return string
      */
     public function getSender()
     {
@@ -151,7 +164,7 @@ class Mail
     /**
      * Get text
      *
-     * @return string 
+     * @return string
      */
     public function getText()
     {
@@ -174,10 +187,56 @@ class Mail
     /**
      * Get receiveDate
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getReceiveDate()
     {
         return $this->receiveDate;
+    }
+
+    /**
+     * Set account
+     *
+     * @param \Mailer\DataBundle\Entity\Account $account
+     * @return Mail
+     */
+    public function setAccount(\Mailer\DataBundle\Entity\Account $account = null)
+    {
+        $this->account = $account;
+
+        return $this;
+    }
+
+    /**
+     * Get account
+     *
+     * @return \Mailer\DataBundle\Entity\Account 
+     */
+    public function getAccount()
+    {
+        return $this->account;
+    }
+
+    /**
+     * Set inbox
+     *
+     * @param string $inbox
+     * @return Mail
+     */
+    public function setInbox($inbox)
+    {
+        $this->inbox = $inbox;
+
+        return $this;
+    }
+
+    /**
+     * Get inbox
+     *
+     * @return string 
+     */
+    public function getInbox()
+    {
+        return $this->inbox;
     }
 }

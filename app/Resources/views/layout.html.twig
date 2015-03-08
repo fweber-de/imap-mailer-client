@@ -5,6 +5,8 @@
 {% endblock %}
 
 {% block js %}
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 {% endblock %}
 
@@ -17,7 +19,7 @@
     <div class="container-fluid">
         <div class="row">
 
-            <div class="col-sm-3 col-md-2 sidebar hidden">
+            <div class="col-sm-3 col-md-2 sidebar">
 
                 <!-- SIDEBAR -->
                 {% if account is defined %}
@@ -30,6 +32,17 @@
             </div>
 
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+                {% set refreshId = '0' %}
+                {% if account is defined %}
+                    {% set refreshId = account.id %}
+                {% endif %}
+
+                <div class="sub-navbar">
+                    <a href="#" id="btn-refresh-inbox" data-account="{{ refreshId }}"><i class="fa fa-refresh"></i></a>
+                    <a href="#" id="btn-new-mail" data-account="{{ refreshId }}"><i
+                                class="fa fa-pencil-square-o"></i></a>
+                </div>
 
                 {# flash messages #}
                 {% for flashMessage in app.session.flashbag.get('notice') %}

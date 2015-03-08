@@ -9,5 +9,9 @@ services:
     mailer.imap:
         class: Mailer\MailBundle\Service\ImapService
         arguments:
-            - %mailer.imap_debug_folder%
             - @mailer.password_handler
+    mailer.app.twig_extension:
+        class: Mailer\AppBundle\Twig\AppExtension
+        public: false
+        tags:
+            - { name: twig.extension }

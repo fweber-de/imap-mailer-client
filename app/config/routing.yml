@@ -1,6 +1,11 @@
 mailer_app:
     resource: "@MailerAppBundle/Resources/config/routing.yml"
     prefix:   /
+    options:
+        expose: true
 
 _user_bundle:
     resource: "@MailerUserBundle/Resources/config/routing.yml"
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"

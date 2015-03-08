@@ -2,6 +2,7 @@
 
 namespace Mailer\DataBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -77,6 +78,16 @@ class Account
     private $security;
 
     /**
+     * @ORM\OneToMany(targetEntity="Mail", mappedBy="account", cascade={"persist"})
+     */
+    private $mails;
+
+    public function __construct()
+    {
+        $this->mails = new ArrayCollection();
+    }
+
+    /**
      * Get id
      *
      * @return integer
@@ -89,7 +100,7 @@ class Account
     /**
      * Set email
      *
-     * @param  string  $email
+     * @param  string $email
      * @return Account
      */
     public function setEmail($email)
@@ -112,7 +123,7 @@ class Account
     /**
      * Set server
      *
-     * @param  string  $server
+     * @param  string $server
      * @return Account
      */
     public function setServer($server)
@@ -135,7 +146,7 @@ class Account
     /**
      * Set username
      *
-     * @param  string  $username
+     * @param  string $username
      * @return Account
      */
     public function setUsername($username)
@@ -158,7 +169,7 @@ class Account
     /**
      * Set password
      *
-     * @param  string  $password
+     * @param  string $password
      * @return Account
      */
     public function setPassword($password)
@@ -227,7 +238,7 @@ class Account
     /**
      * Set security
      *
-     * @param  string  $security
+     * @param  string $security
      * @return Account
      */
     public function setSecurity($security)
@@ -268,5 +279,38 @@ class Account
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * Add mails
+     *
+     * @param \Mailer\DataBundle\Entity\Mail $mails
+     * @return Account
+     */
+    public function addMail(\Mailer\DataBundle\Entity\Mail $mails)
+    {
+        $this->mails[] = $mails;
+
+        return $this;
+    }
+
+    /**
+     * Remove mails
+     *
+     * @param \Mailer\DataBundle\Entity\Mail $mails
+     */
+    public function removeMail(\Mailer\DataBundle\Entity\Mail $mails)
+    {
+        $this->mails->removeElement($mails);
+    }
+
+    /**
+     * Get mails
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMails()
+    {
+        return $this->mails;
     }
 }
